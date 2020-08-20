@@ -36,7 +36,7 @@ fun RecipeCard(recipe: Recipe) {
                 )
             }
 
-            Text(recipe.title)
+            Text(recipe.title, style = MaterialTheme.typography.h4)
             for (ingredients in recipe.ingredients) {
                 Text(text = ingredients)
             }
