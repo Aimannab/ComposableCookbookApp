@@ -11,7 +11,7 @@ fun RecipeList(recipes: List<Recipe>) {
     VerticalScroller {
         Column {
             for (recipe in recipes) {
-                Box(padding = 5.dp) {
+                Box(padding = 16.dp) {
                 RecipeCard(recipe = recipe)
                 }
             }
