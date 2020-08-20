@@ -13,7 +13,6 @@ import androidx.ui.graphics.Color
 import androidx.ui.graphics.Color.Companion.Red
 import androidx.ui.graphics.drawscope.Stroke
 import androidx.ui.layout.Column
-import androidx.ui.layout.preferredSize
 import androidx.ui.material.MaterialTheme
 import androidx.ui.material.Surface
 import androidx.ui.res.imageResource
@@ -24,15 +23,14 @@ import androidx.ui.unit.dp
 fun RecipeCard(recipe: Recipe) {
     Surface(shape = RoundedCornerShape(8.dp), elevation = 8.dp) {
         Column {
-            Box(backgroundColor = Red) {
+            Box(backgroundColor = Red, gravity = Alignment.Center) {
                 Image(
-                        asset = imageResource(id = recipe.imageResource),
-                        modifier = Modifier.drawBackground(
-                                color = Color.Black,
-                                style = Stroke(4f)
-                        ).preferredSize(120.dp)
-                                .gravity(Alignment.CenterHorizontally),
-                        contentScale = ContentScale.Crop
+                    asset = imageResource(id = recipe.imageResource),
+                    modifier = Modifier.drawBackground(
+                        color = Color.Black,
+                        style = Stroke(4f)
+                    ),
+                    contentScale = ContentScale.FillWidth
                 )
             }
 

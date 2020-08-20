@@ -14,25 +14,19 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ComposableCookbookAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
-                }
+            MaterialTheme {
+                RecipeList(recipes = defaultRecipes)
             }
         }
     }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     ComposableCookbookAppTheme {
-        Greeting("Android")
+        MaterialTheme {
+            RecipeList(recipes = defaultRecipes)
+        }
     }
 }
