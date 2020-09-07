@@ -1,23 +1,22 @@
 package com.example.composablecookbookapp
 
-import androidx.compose.Composable
-import androidx.ui.core.Alignment
-import androidx.ui.core.ContentScale
-import androidx.ui.core.Modifier
-import androidx.ui.foundation.Box
-import androidx.ui.foundation.Image
-import androidx.ui.foundation.Text
-import androidx.ui.foundation.drawBackground
-import androidx.ui.foundation.shape.corner.RoundedCornerShape
-import androidx.ui.graphics.Color
-import androidx.ui.graphics.Color.Companion.Red
-import androidx.ui.graphics.drawscope.Stroke
-import androidx.ui.layout.Column
-import androidx.ui.material.MaterialTheme
-import androidx.ui.material.Surface
-import androidx.ui.res.imageResource
+import androidx.compose.foundation.Box
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.Text
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Red
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import androidx.ui.unit.dp
 
 @Composable
 fun RecipeCard(recipe: Recipe) {
@@ -26,9 +25,8 @@ fun RecipeCard(recipe: Recipe) {
             Box(backgroundColor = Red, gravity = Alignment.Center) {
                 Image(
                     asset = imageResource(id = recipe.imageResource),
-                    modifier = Modifier.drawBackground(
-                        color = Color.Black,
-                        style = Stroke(4f)
+                    modifier = Modifier.background(
+                        color = Color.Black
                     ),
                     contentScale = ContentScale.FillWidth
                 )

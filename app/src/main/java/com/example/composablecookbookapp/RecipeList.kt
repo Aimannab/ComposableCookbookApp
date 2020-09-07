@@ -1,18 +1,18 @@
 package com.example.composablecookbookapp
 
-import androidx.compose.Composable
-import androidx.ui.foundation.Box
-import androidx.ui.foundation.VerticalScroller
-import androidx.ui.layout.Column
-import androidx.ui.unit.dp
+import androidx.compose.foundation.Box
+import androidx.compose.foundation.ScrollableColumn
+import androidx.compose.foundation.layout.Column
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun RecipeList(recipes: List<Recipe>) {
-    VerticalScroller {
+    ScrollableColumn {
         Column {
             for (recipe in recipes) {
                 Box(padding = 16.dp) {
-                RecipeCard(recipe = recipe)
+                    RecipeCard(recipe = recipe)
                 }
             }
         }
