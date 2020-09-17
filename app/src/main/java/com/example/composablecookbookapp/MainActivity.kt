@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.ClickableText
 import androidx.compose.foundation.Text
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -17,6 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
 import com.example.composablecookbookapp.ui.ComposableCookbookAppTheme
+import com.example.composablecookbookapp.ui.purple500
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +35,7 @@ fun setToolbarWithRecipeList() {
         topBar = {
             TopAppBar(
                 title = { Text(text = "ComposableCookBook") },
-                backgroundColor = Color.Blue,
+                backgroundColor = purple500,
                 contentColor = Color.White,
                 elevation = 12.dp
             )
