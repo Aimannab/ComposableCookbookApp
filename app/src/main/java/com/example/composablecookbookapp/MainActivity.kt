@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.ClickableText
 import androidx.compose.foundation.Text
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -42,7 +43,7 @@ fun setToolbarWithRecipeList() {
             RecipeList(recipes = defaultRecipes)
         }
     )
-    setSnackbar()
+    //setSnackbar()
 }
 
 @Composable
