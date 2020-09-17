@@ -24,7 +24,7 @@ fun AnimatedFavButton() {
 
         //Declaring initial state
         state(ButtonState.IDLE) {
-            this[width] = 300.dp
+            this[width] = 250.dp
         }
 
         //Declaring final state
@@ -36,16 +36,27 @@ fun AnimatedFavButton() {
         transition(fromState = ButtonState.IDLE, toState = ButtonState.PRESSED) {
             width using tween(durationMillis = 1500)
         }
+
+        //Reversing animation state
+        transition(fromState = ButtonState.PRESSED, toState = ButtonState.IDLE) {
+            width using tween(durationMillis = 1500)
+        }
+    }
+
+    //Store the appropriate state based on the initial buttonState
+    val toState = if (buttonState.value == ButtonState.IDLE) {
+        ButtonState.PRESSED
+    } else {
+        ButtonState.IDLE
     }
 
     //Current button state, takes transitionDefiniton, target state and builds a TransitionState
     val state = transition(
         definition = transitionDefinition,
         initState = buttonState.value,
-        toState = ButtonState.PRESSED
+        toState = toState
     )
 
     //State is then used to read the value you animate, such as the button with width
     FavButton(buttonState = buttonState, state = state)
-
 }

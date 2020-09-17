@@ -21,7 +21,14 @@ fun FavButton(buttonState: MutableState<ButtonState>, state: TransitionState) {
         backgroundColor = Color.White,
         shape = RoundedCornerShape(6.dp),
         modifier = Modifier.size(state[width], 60.dp), //dynamic width based on DpPRopKey
-        onClick = {}
+        onClick = {
+            //Toggles the button state value
+            buttonState.value = if (buttonState.value == ButtonState.IDLE) {
+                ButtonState.PRESSED
+            } else {
+                ButtonState.IDLE
+            }
+        }
     ) {
         ButtonContent()
     }
