@@ -1,24 +1,26 @@
 package com.example.composablecookbookapp
 
+import androidx.compose.animation.core.TransitionState
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
 import com.example.composablecookbookapp.ui.purple500
+import com.example.composablecookbookapp.ui.width
 
-@Preview
+
 @Composable
-fun FavButton() {
+fun FavButton(buttonState: MutableState<ButtonState>, state: TransitionState) {
     Button(
         border = BorderStroke(1.dp, purple500),
         backgroundColor = Color.White,
         shape = RoundedCornerShape(6.dp),
-        modifier = Modifier.size(300.dp, 60.dp),
+        modifier = Modifier.size(state[width], 60.dp), //dynamic width based on DpPRopKey
         onClick = {}
     ) {
         ButtonContent()

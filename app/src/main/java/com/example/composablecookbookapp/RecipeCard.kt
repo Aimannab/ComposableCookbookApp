@@ -36,6 +36,7 @@ fun RecipeCard(recipe: Recipe) {
             for (ingredients in recipe.ingredients) {
                 Text(text = ingredients)
             }
+            AnimatedFavButton()
         }
     }
 }
