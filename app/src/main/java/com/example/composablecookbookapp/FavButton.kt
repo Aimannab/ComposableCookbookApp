@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.composablecookbookapp.ui.purple500
+import com.example.composablecookbookapp.ui.roundedCorners
 import com.example.composablecookbookapp.ui.width
 
 
@@ -19,8 +20,8 @@ fun FavButton(buttonState: MutableState<ButtonState>, state: TransitionState) {
     Button(
         border = BorderStroke(1.dp, purple500),
         backgroundColor = Color.White,
-        shape = RoundedCornerShape(6.dp),
-        modifier = Modifier.size(state[width], 60.dp), //dynamic width based on DpPRopKey
+        shape = RoundedCornerShape(state[roundedCorners]), //dynamic rounded corners on from IntPropKey
+        modifier = Modifier.size(state[width], 60.dp), //dynamic width based from DpPRopKey
         onClick = {
             //Toggles the button state value
             buttonState.value = if (buttonState.value == ButtonState.IDLE) {

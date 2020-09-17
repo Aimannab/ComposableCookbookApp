@@ -1,5 +1,6 @@
 package com.example.composablecookbookapp
 
+import androidx.compose.animation.core.FastOutLinearInEasing
 import androidx.compose.animation.core.transitionDefinition
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.transition
@@ -8,6 +9,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
+import com.example.composablecookbookapp.ui.roundedCorners
 import com.example.composablecookbookapp.ui.width
 
 enum class ButtonState {
@@ -25,21 +27,31 @@ fun AnimatedFavButton() {
         //Declaring initial state
         state(ButtonState.IDLE) {
             this[width] = 250.dp
+            this[roundedCorners] = 6 //Range from 6 to 50 as % of corner radius
         }
 
         //Declaring final state
         state(ButtonState.PRESSED) {
             this[width] = 60.dp
+            this[roundedCorners] = 50 //Range from 6 to 50 as % of corner radius
         }
 
         //Build animation from one state to another using tween with duration of 1500 mills
         transition(fromState = ButtonState.IDLE, toState = ButtonState.PRESSED) {
-            width using tween(durationMillis = 1500)
+            width using tween(durationMillis = 500)
+            roundedCorners using tween(
+                durationMillis = 300,
+                easing = FastOutLinearInEasing
+            )
         }
 
         //Reversing animation state
         transition(fromState = ButtonState.PRESSED, toState = ButtonState.IDLE) {
-            width using tween(durationMillis = 1500)
+            width using tween(durationMillis = 500)
+            roundedCorners using tween(
+                durationMillis = 300,
+                easing = FastOutLinearInEasing
+            )
         }
     }
 
@@ -58,5 +70,5 @@ fun AnimatedFavButton() {
     )
 
     //State is then used to read the value you animate, such as the button with width
-    FavButton(buttonState = buttonState, state = state)
+    FavButton(buttonState, state = state)
 }
