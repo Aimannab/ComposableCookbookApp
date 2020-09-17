@@ -21,7 +21,7 @@ fun FavButton(buttonState: MutableState<ButtonState>, state: TransitionState) {
         border = BorderStroke(1.dp, purple500),
         backgroundColor = state[backgroundColor], //dynamic background color
         shape = RoundedCornerShape(state[roundedCorners]), //dynamic rounded corners on from IntPropKey
-        modifier = Modifier.size(state[width], 60.dp), //dynamic width based from DpPRopKey
+        modifier = Modifier.size(state[width], 50.dp), //dynamic width based from DpPRopKey
         onClick = {
             //Toggles the button state value
             buttonState.value = if (buttonState.value == ButtonState.IDLE) {

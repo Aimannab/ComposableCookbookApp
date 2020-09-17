@@ -20,7 +20,7 @@ import androidx.ui.tooling.preview.Preview
 
 @Composable
 fun RecipeCard(recipe: Recipe) {
-    Surface(shape = RoundedCornerShape(8.dp), elevation = 8.dp) {
+    Surface(shape = RoundedCornerShape(4.dp), elevation = 6.dp) {
         Column {
             Box(backgroundColor = Red, gravity = Alignment.Center) {
                 Image(

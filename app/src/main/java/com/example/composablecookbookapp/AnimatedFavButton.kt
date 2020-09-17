@@ -19,25 +19,25 @@ enum class ButtonState {
 @Preview
 @Composable
 fun AnimatedFavButton() {
-    //Initial state of the button, whcih it remembers even if the UI component is drawn again
+    //Initial state of the button, which it remembers even if the UI component is drawn again
     val buttonState = remember { mutableStateOf(ButtonState.IDLE) }
 
     val transitionDefinition = transitionDefinition<ButtonState> {
 
         //Declaring initial state
         state(ButtonState.IDLE) {
-            this[width] = 250.dp
-            this[roundedCorners] = 6 //Range from 6 to 50 as % of corner radius
-            this[textColor] = purple500
-            this[backgroundColor] = Color.White
-        }
-
-        //Declaring final state
-        state(ButtonState.PRESSED) {
             this[width] = 60.dp
             this[roundedCorners] = 50 //Range from 6 to 50 as % of corner radius
             this[textColor] = Color.White
             this[backgroundColor] = purple500
+        }
+
+        //Declaring final state
+        state(ButtonState.PRESSED) {
+            this[width] = 250.dp
+            this[roundedCorners] = 6 //Range from 6 to 50 as % of corner radius
+            this[textColor] = purple500
+            this[backgroundColor] = Color.White
         }
 
         //Build animation from one state to another using tween with duration of 1500 mills
