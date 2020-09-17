@@ -7,10 +7,10 @@ import androidx.compose.animation.transition
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import com.example.composablecookbookapp.ui.roundedCorners
-import com.example.composablecookbookapp.ui.width
+import com.example.composablecookbookapp.ui.*
 
 enum class ButtonState {
     IDLE, PRESSED
@@ -28,12 +28,16 @@ fun AnimatedFavButton() {
         state(ButtonState.IDLE) {
             this[width] = 250.dp
             this[roundedCorners] = 6 //Range from 6 to 50 as % of corner radius
+            this[textColor] = purple500
+            this[backgroundColor] = Color.White
         }
 
         //Declaring final state
         state(ButtonState.PRESSED) {
             this[width] = 60.dp
             this[roundedCorners] = 50 //Range from 6 to 50 as % of corner radius
+            this[textColor] = Color.White
+            this[backgroundColor] = purple500
         }
 
         //Build animation from one state to another using tween with duration of 1500 mills
@@ -43,6 +47,8 @@ fun AnimatedFavButton() {
                 durationMillis = 300,
                 easing = FastOutLinearInEasing
             )
+            backgroundColor using tween(durationMillis = 300)
+            textColor using tween(durationMillis = 300)
         }
 
         //Reversing animation state
@@ -52,6 +58,8 @@ fun AnimatedFavButton() {
                 durationMillis = 300,
                 easing = FastOutLinearInEasing
             )
+            backgroundColor using tween(durationMillis = 300)
+            textColor using tween(durationMillis = 300)
         }
     }
 
