@@ -1,4 +1,6 @@
-package com.example.composablecookbookapp
+package com.example.composablecookbookapp.ui
+
+import com.example.composablecookbookapp.R
 
 val defaultRecipes = listOf(
     Recipe(R.drawable.noodles, "Ramen", listOf("Noodles", "Eggs", "Mushrooms", "Carrots", "Soy Sauce")),

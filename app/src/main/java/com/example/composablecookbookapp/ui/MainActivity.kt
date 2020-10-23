@@ -1,4 +1,4 @@
-package com.example.composablecookbookapp
+package com.example.composablecookbookapp.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -15,8 +15,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import com.example.composablecookbookapp.ui.ComposableCookbookAppTheme
-import com.example.composablecookbookapp.ui.purple500
+import com.example.composablecookbookapp.properties.ComposableCookbookAppTheme
+import com.example.composablecookbookapp.properties.purple500
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,7 +66,7 @@ fun setSnackbar() {
     )
 }
 
-@Preview(showBackground = true)
+@Preview
 @Composable
 fun DefaultPreview() {
     ComposableCookbookAppTheme {

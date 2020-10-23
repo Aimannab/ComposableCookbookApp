@@ -1,4 +1,4 @@
-package com.example.composablecookbookapp
+package com.example.composablecookbookapp.ui
 
 import androidx.compose.animation.core.FastOutLinearInEasing
 import androidx.compose.animation.core.transitionDefinition
@@ -10,7 +10,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import com.example.composablecookbookapp.ui.*
+import com.example.composablecookbookapp.properties.*
 
 enum class ButtonState {
     IDLE, PRESSED

@@ -1,4 +1,4 @@
-package com.example.composablecookbookapp.ui
+package com.example.composablecookbookapp.properties
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

@@ -1,4 +1,4 @@
-package com.example.composablecookbookapp
+package com.example.composablecookbookapp.ui
 
 import androidx.compose.animation.core.TransitionState
 import androidx.compose.foundation.Icon
@@ -11,10 +11,8 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
-import com.example.composablecookbookapp.ui.textColor
+import com.example.composablecookbookapp.properties.textColor
 
-@Preview
 @Composable
 fun ButtonContent(buttonState: MutableState<ButtonState>, state: TransitionState) {
     Row(

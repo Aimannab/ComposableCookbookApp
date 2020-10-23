@@ -1,4 +1,4 @@
-package com.example.composablecookbookapp
+package com.example.composablecookbookapp.ui
 
 import androidx.annotation.DrawableRes
 

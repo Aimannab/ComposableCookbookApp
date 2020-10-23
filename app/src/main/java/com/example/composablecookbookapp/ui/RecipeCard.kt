@@ -1,10 +1,12 @@
-package com.example.composablecookbookapp
+package com.example.composablecookbookapp.ui
 
 import androidx.compose.foundation.Box
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -33,9 +35,11 @@ fun RecipeCard(recipe: Recipe) {
             }
 
             Text(recipe.title, style = MaterialTheme.typography.h4)
+            Spacer(modifier = Modifier.height(8.dp))
             for (ingredients in recipe.ingredients) {
                 Text(text = ingredients)
             }
+            Spacer(modifier = Modifier.height(8.dp))
             AnimatedFavButton()
         }
     }

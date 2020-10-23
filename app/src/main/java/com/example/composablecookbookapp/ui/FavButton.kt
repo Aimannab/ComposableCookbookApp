@@ -1,4 +1,4 @@
-package com.example.composablecookbookapp
+package com.example.composablecookbookapp.ui
 
 import androidx.compose.animation.core.TransitionState
 import androidx.compose.foundation.BorderStroke
@@ -9,10 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.composablecookbookapp.ui.backgroundColor
-import com.example.composablecookbookapp.ui.purple500
-import com.example.composablecookbookapp.ui.roundedCorners
-import com.example.composablecookbookapp.ui.width
+import com.example.composablecookbookapp.properties.backgroundColor
+import com.example.composablecookbookapp.properties.purple500
+import com.example.composablecookbookapp.properties.roundedCorners
+import com.example.composablecookbookapp.properties.width
 
 
 @Composable
